@@ -9,3 +9,11 @@ func Sum(sumArray []int) int {
 	}
 	return sumResult
 }
+
+func SumAll(numbersToSum ...[]int) []int {
+	var result = make([]int, len(numbersToSum))
+	for i, x := range numbersToSum {
+		result[i] = Sum(x)
+	}
+	return result
+}
