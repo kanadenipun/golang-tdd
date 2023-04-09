@@ -11,9 +11,9 @@ func Sum(sumArray []int) int {
 }
 
 func SumAll(numbersToSum ...[]int) []int {
-	var result = make([]int, len(numbersToSum))
-	for i, x := range numbersToSum {
-		result[i] = Sum(x)
+	var result []int
+	for _, x := range numbersToSum {
+		result = append(result, Sum(x))
 	}
 	return result
 }
