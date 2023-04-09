@@ -10,11 +10,13 @@ func Hello(name string, lang string) string {
 	if name == "" {
 		name = "World"
 	}
-	if lang == "Spanish" {
+
+	switch lang {
+	case "Spanish":
 		greetingText = greetingStringSpanish + name + "!"
-	} else if lang == "French" {
+	case "French":
 		greetingText = greetingStringFrench + name + "!"
-	} else {
+	default:
 		greetingText = greetingStringEnglish + name + "!"
 	}
 	return greetingText
