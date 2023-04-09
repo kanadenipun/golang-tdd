@@ -7,16 +7,19 @@ func TestHello(t *testing.T) {
 		got := Hello("Nipun")
 		want := "Hello, Nipun!"
 
-		if got != want {
-			t.Errorf("got %q want %q", got, want)
-		}
+		assertCorrectMessage(t, got, want)
 	})
 	t.Run("Say Hello World when name is not passed", func(t *testing.T) {
 		got := Hello("")
 		want := "Hello, World!"
 
-		if got != want {
-			t.Errorf("got %q want %q", got, want)
-		}
+		assertCorrectMessage(t, got, want)
 	})
+}
+
+func assertCorrectMessage(t testing.TB, got string, want string) {
+	t.Helper()
+	if got != want {
+		t.Errorf("got %q want %q", got, want)
+	}
 }
