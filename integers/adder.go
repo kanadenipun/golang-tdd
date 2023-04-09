@@ -1,5 +1,5 @@
 package integers
 
-func Add(int, int) int {
-	return 4
+func Add(varA, varB int) int {
+	return varA + varB
 }
