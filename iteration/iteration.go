@@ -1,5 +1,9 @@
 package iteration
 
 func Repeat(toBeRepeated string) string {
-	return "aaaaa"
+	var resultString string
+	for i := 0; i < 5; i++ {
+		resultString += toBeRepeated
+	}
+	return resultString
 }
