@@ -28,5 +28,24 @@ func TestSumAll(t *testing.T) {
 			t.Errorf("expected '%v', got '%v'", want, got)
 		}
 	})
+}
 
+func TestSumAllTrails(t *testing.T) {
+
+	checkSums := func(t testing.TB, got, want []int) {
+		t.Helper()
+
+	}
+	t.Run("test sum of all slice trails", func(t *testing.T) {
+
+		var got = SumAllTrails([]int{1, 2, 3}, []int{0, 5, 5})
+		want := []int{5, 10}
+		checkSums(t, got, want)
+	})
+	t.Run("safely test sum of all slice trails", func(t *testing.T) {
+
+		var got = SumAllTrails([]int{1, 2, 3}, []int{0, 5, 5}, []int{1})
+		want := []int{5, 10, 0}
+		checkSums(t, got, want)
+	})
 }

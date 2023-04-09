@@ -17,3 +17,17 @@ func SumAll(numbersToSum ...[]int) []int {
 	}
 	return result
 }
+
+func SumAllTrails(numbersToSum ...[]int) []int {
+	var result []int
+	var sum int
+	for _, x := range numbersToSum {
+		if len(x) < 1 {
+			sum = 0
+		} else {
+			sum = Sum(x[1:])
+		}
+		result = append(result, sum)
+	}
+	return result
+}
